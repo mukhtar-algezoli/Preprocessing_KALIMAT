@@ -20,4 +20,3 @@ for index, row in emp_df.iterrows():
     print("file written  :" + str(index))
     
     
-print(emp_df)
