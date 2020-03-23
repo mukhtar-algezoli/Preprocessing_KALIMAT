@@ -2,14 +2,14 @@
 import numpy as np
 import io
 
-emp_df = pandas.read_csv('KALIMAT_UTF.csv', usecols=['id','Summaries', 'Articles'])
+emp_df = pandas.read_csv('FinaleDataUTF.csv', usecols=['id','text_x', 'text_y'])
 
 for index, row in emp_df.iterrows():
     # print(row['text_x'], row['text_y'])
     if index == 1438:
        continue
-    text_y = '\n\n'.join(row['Articles'].split('.'))
-    text_x = '\n\n@highlight\n\n' + row['Summaries']
+    text_y = '\n\n'.join(row['text_y'].split('.'))
+    text_x = '\n\n@highlight\n\n' + row['text_x']
     text_x = '\n\n@highlight\n\n'.join(text_x.split('.'))
     # print(text_y)
     output_text =  text_y + text_x
